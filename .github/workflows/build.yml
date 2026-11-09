@@ -1,0 +1,23 @@
+name: Build Dyslexic Filter
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Compile to EXE
+      run: |
+        cl /EHsc main.cpp user32.lib gdi32.lib /Fe:DyslexicOverlay.exe
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: DyslexicOverlay
+        path: DyslexicOverlay.exe
