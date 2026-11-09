@@ -1,21 +1,29 @@
 # Dyslexic Filter 📖
 
-**Dyslexic Filter** is a lightweight, Windows desktop application written in C++ that adds a subtle tint overlay over your entire screen. It is designed to assist individuals with dyslexia and Visual Stress (Meares-Irlen syndrome) by reducing screen glare and contrast.
+**Dyslexic Filter** είναι μια ελαφριά εφαρμογή επιφάνειας εργασίας για Windows γραμμένη σε C++, η οποία προσθέτει ένα διακριτικό, απαλό χρωματικό φίλτρο σε ολόκληρη την οθόνη. Σχεδιάστηκε για να βοηθάει άτομα με δυσλεξία, μειώνοντας την αντανκλαστή και την κούραση των ματιών.
 
-## Features
-- **Click-Through:** The filter stays on top of all windows without interfering with mouse clicks, scrolling, or typing.
-- **Ultra Lightweight:** Built using native Win32 API with zero external dependencies.
-- **Easy Exit:** Simply press `Esc` to close the overlay.
+## Χαρακτηριστικά
+- **Click-Through:** Το φίλτρο βρίσκεται πάνω από όλα τα παράθυρα, αλλά τα κλικ, το scrolling και η πληκτρολόγηση περνούν κανονικά από μέσα του.
+- **Ελαφρύ & Αυτόνομο:** Χωρίς βαριές βιβλιοθήκες ή εγκαταστάσεις.
+- **Γρήγορο κλείσιμο:** Πατάς απλώς το πλήκτρο **`Esc`** για να κλείσει.
 
-## How to Build
+---
 
-### Requirements
-- C++ Compiler (MSVC, MinGW, or Clang)
-- CMake (version 3.10 or higher)
+## 📥 Πώς να το κατεβάσετε και να το δοκιμάσετε (Για μη προγραμματιστές)
 
-### Building via CMake
-```bash
-mkdir build
-cd build
-cmake ..
-cmake --build .
+Δεν χρειάζεται να κάνετε compile τον κώδικα. Το GitHub φτιάχνει αυτόματα την εφαρμογή για εσάς:
+
+1. Πηγαίνετε στην καρτέλα **[Actions](../../actions)** αυτού του repository.
+2. Κάντε κλικ στην πιο πρόσφατη επιτυχημένη εργασία (με το πράσινο τσεκάρισμα ✅).
+3. Κυλήστε προς τα κάτω στην ενότητα **Artifacts**.
+4. Κάντε κλικ στο **DyslexicOverlay** για να κατεβάσετε το αρχείο `.zip` που περιέχει το έτοιμο **`DyslexicOverlay.exe`**.
+5. Αποσυμπιέστε το και τρέξτε το `.exe`! (Αν τα Windows βγάλουν προειδοποίηση ασφαλείας, πατήστε *"More info"* και *"Run anyway"*).
+
+---
+
+## 🛠️ Πώς να το χτίσετε μόνοι σας (Για προγραμματιστές)
+
+Αν θέλετε να κάνετε compile τον κώδικα τοπικά χρησιμοποιώντας το MSVC:
+
+```cmd
+cl /EHsc main.cpp user32.lib gdi32.lib /Fe:DyslexicOverlay.exe
