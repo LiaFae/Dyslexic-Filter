@@ -1,0 +1,8 @@
+# Build folders & Executables
+build/
+bin/
+*.exe
+*.obj
+*.o
+.vs/
+*.user
